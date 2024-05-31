@@ -8,6 +8,10 @@ if (isset($_POST['id_link'])) {
     $json_obj = json_decode($database);
     if (isset($json_obj->$id_link)){
         $json_obj->$id_link->status = true;
+        forech($json_obj->$id_link->pesan as $data_pesan){
+            $data_pesan_fix[] = $data_pesan; 
+        }
+            json_obj->$id_link->pesan = $data_pesan_fix;
             echo json_encode($json_obj ->$id,JSON_PRETTY_PRINT);
 
         }else{

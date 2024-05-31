@@ -1,25 +1,21 @@
 <?php
-if (isset($_GET['id_link'])) {
-    $_id_link = $_GET['id_link'];
+header("Content-Type: application/json");
+
+if (isset($_POST['NAMA'])) {
+
+    $nama_orang = $_POST['nama'];
 
     $database = file_get_contents("database/data.txt");
     $json_obj = json_decode($database);
-    if (isset($json_obj->$id_link)){
 
-        $id_pesan = "idpesan".uniqid();
-        if(!($json_obj->$id_link->pesan == null)){
-            echo "data sudah ada komentar sebelumnya";
+    $uniq_id = uniqid();
 
-        }else{
-            echo "Data belum ada komentar sebelumnya";
+    $json_obj->$uniq_id = ["nama" => "$nama_orang","pesan" =>null];
+    file_put_contents("database/data.txt", json_encode($json_obj,JSON_PRETTY_PRINT));
 
-            $json_obj->$id_link->pesan = [["id_pesan"=>"$id_pesan"]];
-        }
-
-    }else{
-        echo json_encode(["status"=>false]);
-    }
+    echo json_encode(["status"=>true,"nama"=>"$nama-orang", "id,link"=>$uniq_id]);
 
 }else{
-    echo json_encode(["status"=>false]);
+    echo json_encode(["status" =>false]);
 }
+?>
