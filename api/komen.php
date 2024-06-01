@@ -26,7 +26,6 @@ if (isset($_POST['id_link'],$_POST['pesan'])){
 
 
 
-
     }else{
         echo json_encode(["status"=>false]);
     }
