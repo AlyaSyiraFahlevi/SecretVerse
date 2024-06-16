@@ -22,6 +22,7 @@ if (isset($_GET['id'])){
         die("Not found");
     }
     
+    
 }else{
     die("Not found");
 }

@@ -118,7 +118,6 @@ if (isset($_GET['id'])){
 }
 
 
-
 function copy_link() {
   // Get the text field
   var copyText = document.getElementById("input_link");

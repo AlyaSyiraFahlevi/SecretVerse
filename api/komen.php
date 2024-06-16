@@ -15,7 +15,6 @@ if (isset($_POST['id_link'],$_POST['pesan'])){
 
             $json_obj->$id_link->pesan->$id_pesan = ["pesan"=>"$pesan","waktu"=>"$waktu"];
 
-
         }else{
             echo json_encode(["status"=>true]);
 
