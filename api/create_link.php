@@ -1,5 +1,5 @@
 <?php 
-header("Content-Type: application/json");
+
 function zerif_encode($string){
     ini_set('display_errors', 0);
 
@@ -8,6 +8,7 @@ function zerif_encode($string){
     $data = openssl_encrypt($string, $method, $pass);
     ini_set('display_errors', 1);
     return $data;
+
 }
 function zerif_decode($string){
     ini_set('display_errors', 0);
@@ -32,7 +33,7 @@ if (isset($_POST['nama'])){
 
     echo json_encode(["status"=>true,"nama"=>"$nama_orang","id_link"=>zerif_encode($uniq_id)]);
 
-    
+
 }else{
     echo json_encode(["status"=>false]);
 }

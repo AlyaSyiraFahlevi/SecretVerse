@@ -42,7 +42,7 @@ if (isset($_GET['id'])){
        
         <nav class='dark navbar navbar-expand-lg zerif_theme' aria-label="breadcrumb">
         <div class="container-fluid ">
-              <a class="navbar-brand text-white" href="./">ZerSec</a>
+              <a class="navbar-brand text-white" href="./">Secret Verse</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -51,9 +51,7 @@ if (isset($_GET['id'])){
                   <li class="nav-item">
                     <a class="nav-link  text-white" aria-current="page" href="./">Home</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="contact.html">Contact</a>
-                  </li>
+
 
                 </ul>
               </div>
