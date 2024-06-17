@@ -46,7 +46,7 @@ if (isset($_GET['id'])){
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link  text-white" aria-current="page" href="./">Home</a>
+                    <a class="nav-link  text-white" aria-current="page" href="index.html">Home</a>
                   </li>
 
 

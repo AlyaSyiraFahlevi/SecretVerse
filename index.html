@@ -18,7 +18,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-white" aria-current="page" href="index.html" onclick="scrollTo()">Home</a> 
                   </li>
                 </ul>
               </div>
@@ -133,6 +133,19 @@ if (getCookie("my_url") == null){
                 },"JSON");
 
             }
+            function scrollToHome() {
+      const homeElement = document.getElementById('home');
+      if (homeElement) {
+        homeElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+
+    document.querySelector('.nav-link.active').addEventListener('click', function(event) {
+      event.preventDefault();
+      scrollToHome();
+    });
         </script>
     </body>
 </html>
