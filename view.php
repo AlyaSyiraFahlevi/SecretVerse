@@ -11,7 +11,6 @@ if (isset($_GET['id'])){
         $data = openssl_encrypt($string, $method, $pass);
         ini_set('display_errors', 1);
         return $data;
-
     }
     function zerif_decode($string){
         ini_set('display_errors', 0);
@@ -108,7 +107,7 @@ if (isset($_GET['id'])){
         window.location.href = 'index.html';
       }
     }
-    
+
     document.querySelector('.nav-link.active').addEventListener('click', function(event) {
         event.preventDefault();
       scrollToHome();

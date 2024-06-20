@@ -32,8 +32,6 @@ if (isset($_POST['nama'])){
     file_put_contents("database/data.txt",json_encode($json_obj,JSON_PRETTY_PRINT));
 
     echo json_encode(["status"=>true,"nama"=>"$nama_orang","id_link"=>zerif_encode($uniq_id)]);
-
-    
 }else{
     echo json_encode(["status"=>false]);
 }

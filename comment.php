@@ -26,6 +26,7 @@ if (isset($_GET['id'])){
     die("Not found");
 }
 
+
 ?>
 <html>
     <head>
