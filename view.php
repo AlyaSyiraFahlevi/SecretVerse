@@ -1,4 +1,3 @@
-
 <?php 
 $server = $_SERVER['HTTP_HOST'];
 if (isset($_GET['id'])){
@@ -26,7 +25,6 @@ if (isset($_GET['id'])){
     die("error not found");
 }
 ?>
-
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

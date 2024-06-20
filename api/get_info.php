@@ -20,3 +20,4 @@ if (isset($_POST['id_link'])){
 }else{
     echo json_encode(["status"=>false]);
 }
+?>

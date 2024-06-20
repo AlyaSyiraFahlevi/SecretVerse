@@ -1,6 +1,4 @@
 <?php 
-
-
 if (isset($_GET['id'])){
 
     $id_link = $_GET['id'];
@@ -71,8 +69,6 @@ if (isset($_GET['id'])){
                 </div>
             </div>
         </div>
-
-
 
 
 

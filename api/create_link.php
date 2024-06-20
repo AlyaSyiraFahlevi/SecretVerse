@@ -35,5 +35,4 @@ if (isset($_POST['nama'])){
 }else{
     echo json_encode(["status"=>false]);
 }
-
 ?>
