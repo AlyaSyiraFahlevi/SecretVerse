@@ -33,6 +33,7 @@ if (isset($_POST['nama'])){
 
     echo json_encode(["status"=>true,"nama"=>"$nama_orang","id_link"=>zerif_encode($uniq_id)]);
 
+    
 }else{
     echo json_encode(["status"=>false]);
 }

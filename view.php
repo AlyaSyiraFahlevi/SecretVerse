@@ -108,7 +108,7 @@ if (isset($_GET['id'])){
         window.location.href = 'index.html';
       }
     }
-
+    
     document.querySelector('.nav-link.active').addEventListener('click', function(event) {
         event.preventDefault();
       scrollToHome();

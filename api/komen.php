@@ -3,6 +3,7 @@ header("Content-Type: application/json");
 
 if (isset($_POST['id_link'],$_POST['pesan'])){
 
+    
     $id_link = $_POST['id_link'];
     $pesan = strip_tags($_POST['pesan']);
     $database = file_get_contents("database/data.txt");
