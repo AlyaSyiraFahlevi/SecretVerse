@@ -1,25 +1,25 @@
 .zerif_theme{
-    background-color:rgb(236, 99, 167);
+    background-color:rgb(32, 19, 104);
     
     
-}
-.zerif_theme h2,h3,label,li{
+  }
+  .zerif_theme h2,h3,label,li{
     color:aliceblue;
-}
-.zerif_theme h3{
+  }
+  .zerif_theme h3{
     font-weight: bold;
-}
-.box_tool{
+  }
+  .box_tool{
    
-    background-color: rgb(240, 180, 190);
+    background-color: rgb(18, 5, 156);
     border-radius: 10px;
-}
-.zerif_theme .container-fluid{
+  }
+  .zerif_theme .container-fluid{
     color:azure;
-}
-body{
-    background-color: rgb(236, 161, 183);
-}
-.zerif_button{
-    background-color: rgb(255, 0, 149);
-}
+  }
+  body{
+    background-color: rgb(25, 20, 160);
+  }
+  .zerif_button{
+    background-color: blue;
+  }
