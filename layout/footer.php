@@ -1,8 +1,3 @@
-<footer class="bg-blue-950 flex justify-center">
-    <div class="m-4 text-white text-sm">
-        &copy; Copyright <strong><span>Secret Verse</span></strong>. All Rights Reserved
-    </div>
-</footer>
 
 <script src="assets/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

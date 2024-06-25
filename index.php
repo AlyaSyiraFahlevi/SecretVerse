@@ -2,14 +2,6 @@
 
     <header class="container bg-blue-950 text-white flex justify-center drop-shadow-sm">
         <div class="w-4/5 h-full flex justify-between items-center mt-4 mb-4">
-            <div class="h-sosmed text-sm ">
-                <a href="https://www.instagram.com/anonymmessage_secrerverse" class="hover:text-white hover:opacity-50" target="_blank"><i
-                    class="bi bi-instagram"></i></a>
-                    <a href="https://github.com/AlyaSyiraFahlevi/SecretVerse" class="ms-3 hover:text-white hover:opacity-50"
-                    target="_blank"><i class="bi bi-github"></i></a>
-                    <a href="https://youtube.com/@alyaaa_syr?si=H8NXUL3yt2iCttAa"
-                    class="ms-3 hover:text-white hover:opacity-50" target="_blank"><i class="bi bi-youtube"></i></a>
-                </div>
                 <div class="h-title flex text-2xl">
                     <h3 class="text-sm">Secret</h3>
                     <h3 class="text-white opacity-50 text-sm">Verse</h3>

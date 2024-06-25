@@ -28,7 +28,7 @@ $messages = $conn->query($sql);
             <h3 class="text-sm font-medium">Halo, <?php echo $username; ?><i class="bi bi-arrow-right-short font-bold"></i></h3>
             <div class="border ml-3 rounded-lg p-2">
                 <a href="signout.php" class="hover:text-white hover:opacity-50">
-                <h3 class="text-sm font-medium ">Log out</h3>
+                    <h3 class="text-sm font-medium ">Log out</h3>
                 </a>
             </div>
         </div>
@@ -51,19 +51,19 @@ $messages = $conn->query($sql);
                 </div>
             </div>
 
-            <?php if ($messages->num_rows > 0): ?>
-                <?php while($message = $messages->fetch_assoc()): ?>
+            <?php if ($messages->num_rows > 0) : ?>
+                <?php while ($message = $messages->fetch_assoc()) : ?>
                     <div class="w-full mt-4 p-3 flex justify-between items-center shadow-lg rounded-md">
                         <div>
                             <h3 class="font-bold">New Message</h4>
-                            <p class="text-sm"><?php echo $message['time']; ?></p>
+                                <p class="text-sm"><?php echo $message['time']; ?></p>
                         </div>
                         <div>
                             <a href="#" class="view-message" data-message="<?php echo htmlspecialchars($message['message']); ?>" data-toggle="modal" data-target="#messageModal">Lihat</a>
                         </div>
                     </div>
                 <?php endwhile; ?>
-            <?php else: ?>
+            <?php else : ?>
                 <div class="w-full mt-4 text-center">
                     <h3>Tidak Ada Pesan</h3>
                 </div>
@@ -74,34 +74,34 @@ $messages = $conn->query($sql);
 
 <!-- Modal -->
 <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="messageModalLabel">Pesan</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="modal-message-content"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Pesan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message-content"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    var messageLinks = document.querySelectorAll('.view-message');
-    messageLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            var message = this.getAttribute('data-message');
-            document.getElementById('modal-message-content').textContent = message;
+        var messageLinks = document.querySelectorAll('.view-message');
+        messageLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var message = this.getAttribute('data-message');
+                document.getElementById('modal-message-content').textContent = message;
+            });
         });
     });
-});
 </script>
 
 <?php include 'layout/footer.php'; ?>

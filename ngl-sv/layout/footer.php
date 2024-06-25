@@ -1,6 +1,6 @@
 <footer class="bg-blue-950 flex justify-center">
     <div class="m-4 text-white text-sm">
-        &copy; Copyright <strong><span>wyanns-404</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>SecretVerse</span></strong>. All Rights Reserved
     </div>
 </footer>
 

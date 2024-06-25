@@ -2,31 +2,36 @@
 <?php include 'db/conn.php'; ?>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$username = "User"; // Default value
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_GET['user_id'])) {
     if (isset($_GET['user_id'])) {
         $user_link = $_GET['user_id'];
 
-        // Dapatkan user_id dari link unik
-        $sql = "SELECT user_id FROM users WHERE unique_link='$user_link'";
+        // Dapatkan user_id dan username dari link unik
+        $sql = "SELECT user_id, username FROM users WHERE unique_link='$user_link'";
         $result = $conn->query($sql);
 
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
             $user_id = $row['user_id'];
+            $username = $row['username'];
 
-            $message = $_POST['message'];
-            $time = date('Y-m-d H:i:s');
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $message = $_POST['message'];
+                $time = date('Y-m-d H:i:s');
 
-            $stmt = $conn->prepare("INSERT INTO answers (user_id, message, time) VALUES (?, ?, ?)");
-            $stmt->bind_param("iss", $user_id, $message, $time);
+                $stmt = $conn->prepare("INSERT INTO answers (user_id, message, time) VALUES (?, ?, ?)");
+                $stmt->bind_param("iss", $user_id, $message, $time);
 
-            if ($stmt->execute()) {
-                header("Location: ./");
-            } else {
-                echo "Error: " . $stmt->error;
+                if ($stmt->execute()) {
+                    header("Location: ./");
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+
+                $stmt->close();
             }
-
-            $stmt->close();
         } else {
             echo "Invalid user link.";
         }
@@ -50,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?user_id=" . $_GET['user_id']); ?>" method="post">
                 <div>
-                    <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Tulis Pesan Anda Untuk User..</label>
+                    <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Tulis Pesan Anda Untuk <strong><?php echo htmlspecialchars($username); ?></strong></label>
                     <div class="relative mt-2 rounded-md shadow-sm">
                         <input type="text" name="message" id="message" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Tulis disini" required>
                     </div>
